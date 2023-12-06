@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E3837">
+
+    <LinearLayout
+        android:id="@+id/HeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="200">
+
+        <EditText
+            android:id="@+id/edtEnterLink"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_weight="190"
+            android:background="#059600"
+            android:ellipsize="end"
+            android:hint="You can enter a new link here"
+            android:padding="5dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnLoadLink"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="#000000"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Load link"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/WebLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/HeaderLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>
