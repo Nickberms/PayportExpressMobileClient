@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3E3837">
@@ -25,7 +26,8 @@
             android:singleLine="true"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="Autofill,HardcodedText,TextFields,TextContrastCheck,VisualLintTextFieldSize" />
 
         <Button
             android:id="@+id/btnLoadLink"
@@ -37,7 +39,8 @@
             android:padding="5dp"
             android:text="Load link"
             android:textColor="#FFFFFF"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <WebView
