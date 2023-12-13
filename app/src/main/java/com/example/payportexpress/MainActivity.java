@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        webView.loadUrl("http://136.172.221.198:8084/PayportExpressWebClient/");
+        webView.loadUrl("http://136.172.221.111:8084/PayportExpressWebClient/");
         btnLoadUrl.setOnClickListener(v -> {
             String url = editTextUrl.getText().toString();
             if (!url.isEmpty()) {
