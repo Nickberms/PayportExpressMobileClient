@@ -2,11 +2,14 @@ package com.example.payportexpress;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.webkit.JsResult;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +29,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
+                return true;
+            }
+        });
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onJsConfirm(WebView view, String url, String message, final JsResult result) {
+                new AlertDialog.Builder(view.getContext())
+                        .setMessage(message)
+                        .setPositiveButton(android.R.string.ok,
+                                (dialog, which) -> result.confirm())
+                        .setNegativeButton(android.R.string.cancel,
+                                (dialog, which) -> result.cancel())
+                        .create()
+                        .show();
                 return true;
             }
         });
